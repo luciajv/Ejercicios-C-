@@ -1,2 +1,2 @@
-# Ejercicios-C-
+# Ejercicios C#
 Principios de C#
