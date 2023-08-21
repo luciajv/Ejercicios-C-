@@ -1,39 +1,44 @@
-﻿namespace Lab1Ej5
+﻿namespace Lab1Ej1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int op = -1;
+            Console.WriteLine("Escriba el primer número");
+            int n1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Escriba el otro número");
+            int n2 = int.Parse(Console.ReadLine());
 
-            while (op != 0)
+            if (n1 > n2)
             {
-                Console.Clear();
-                Console.WriteLine("Seleccione una opción");
-                Console.WriteLine("1 - Primera opción");
-                Console.WriteLine("2 - Segunda opción");
-                Console.WriteLine("0 - Salir");
-
-                op = int.Parse(Console.ReadLine());
-                if (op != 0)
-                {
-                    switch (op)
-                    {
-                        case 1:
-                            Console.WriteLine("Eligió la opción 1");
-                            break;
-                        case 2:
-                            Console.WriteLine("Eligió la opción 2");
-                            break;
-                        default:
-                            Console.WriteLine("Seleccionó una opción no válida");
-                            break;
-                    }
-                }
-                
-
-                Console.ReadKey();
+                int aux = n1;
+                n1 = n2;
+                n2 = aux;
             }
+
+            bool encontrado = false;
+
+            for (int i = n1; i < n2 && !encontrado; i++)
+            {
+                if (i % 33 == 0)
+                {
+                    //Es multiplo de 33
+                    Console.WriteLine(i);
+                    encontrado= true;
+               
+                }
+               
+            }
+            if (!encontrado)
+            {
+                Console.WriteLine("No hay multiplos de 33");
+            }
+
+
+
+
+
+            Console.ReadKey();
         }
     }
 }
