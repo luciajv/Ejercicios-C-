@@ -1,38 +1,39 @@
-﻿namespace Lab1Ej4
+﻿namespace Lab1Ej5
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Random rnd = new Random();
-            int numeroSecreto = rnd.Next(1,10000);
+            int op = -1;
 
-            bool gano = false;
-
-            while (!gano) {
+            while (op != 0)
+            {
                 Console.Clear();
-                Console.WriteLine( "Adivine un número" );
-                int numeroSeleccionado = int.Parse(Console.ReadLine());
+                Console.WriteLine("Seleccione una opción");
+                Console.WriteLine("1 - Primera opción");
+                Console.WriteLine("2 - Segunda opción");
+                Console.WriteLine("0 - Salir");
 
-                if (numeroSeleccionado > numeroSecreto)
+                op = int.Parse(Console.ReadLine());
+                if (op != 0)
                 {
-                    Console.WriteLine("Menos!");
+                    switch (op)
+                    {
+                        case 1:
+                            Console.WriteLine("Eligió la opción 1");
+                            break;
+                        case 2:
+                            Console.WriteLine("Eligió la opción 2");
+                            break;
+                        default:
+                            Console.WriteLine("Seleccionó una opción no válida");
+                            break;
+                    }
                 }
-                else if (numeroSeleccionado < numeroSecreto)
-                {
-                    Console.WriteLine("Más!");
-                }
-                else { 
-                gano = true;
-                    Console.WriteLine("Ganaste!!!!!");
-                }
+                
 
                 Console.ReadKey();
-            
-            
             }
-
-
         }
     }
 }
