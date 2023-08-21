@@ -1,0 +1,38 @@
+namespace AplicacionConsola
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Escriba su nombre");
+            string nombre = Console.ReadLine();
+         
+            Console.WriteLine("Escriba su edad");
+            int edad = Int32.Parse(Console.ReadLine());
+
+            if (edad > 18) {
+                Console.WriteLine("Es mayor");
+            }
+            else{
+                Console.WriteLine("Es menor");
+            }
+
+            for (int i = 0; i < 10; i++) {
+
+                Console.WriteLine(i);
+            }
+
+            int iterador = 0;
+
+            while (iterador < 10)
+            {
+                
+                Console.WriteLine("Iterador "+iterador);
+                iterador++;
+            }
+            Console.WriteLine($"Hola {nombre} ud tiene {edad}");
+            Console.ReadKey();
+
+        }
+    }
+}
