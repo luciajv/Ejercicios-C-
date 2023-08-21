@@ -1,44 +1,38 @@
-﻿namespace Lab1Ej1
+﻿namespace Lab1Ej4
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Escriba el primer número");
-            int n1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Escriba el otro número");
-            int n2 = int.Parse(Console.ReadLine());
+            Random rnd = new Random();
+            int numeroSecreto = rnd.Next(1,10000);
 
-            if (n1 > n2)
-            {
-                int aux = n1;
-                n1 = n2;
-                n2 = aux;
-            }
+            bool gano = false;
 
-            bool encontrado = false;
+            while (!gano) {
+                Console.Clear();
+                Console.WriteLine( "Adivine un número" );
+                int numeroSeleccionado = int.Parse(Console.ReadLine());
 
-            for (int i = n1; i < n2 && !encontrado; i++)
-            {
-                if (i % 33 == 0)
+                if (numeroSeleccionado > numeroSecreto)
                 {
-                    //Es multiplo de 33
-                    Console.WriteLine(i);
-                    encontrado= true;
-               
+                    Console.WriteLine("Menos!");
                 }
-               
+                else if (numeroSeleccionado < numeroSecreto)
+                {
+                    Console.WriteLine("Más!");
+                }
+                else { 
+                gano = true;
+                    Console.WriteLine("Ganaste!!!!!");
+                }
+
+                Console.ReadKey();
+            
+            
             }
-            if (!encontrado)
-            {
-                Console.WriteLine("No hay multiplos de 33");
-            }
 
 
-
-
-
-            Console.ReadKey();
         }
     }
 }
